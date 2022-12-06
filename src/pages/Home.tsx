@@ -58,7 +58,7 @@ const Home = () => {
           <div id="unity-footer">
             <div id="unity-webgl-logo"></div>
             <div id="unity-fullscreen-button"></div>
-            <div id="unity-build-title">Metamonopoly</div>
+            {/* <div id="unity-build-title">Metamonopoly</div> */}
           </div>
         </div>
 

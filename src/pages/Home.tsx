@@ -2,7 +2,20 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import GameBackground from './../assets/images/Game-Background.png';
 import { Unity, useUnityContext } from 'react-unity-webgl';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+
+function useWindowSize() {
+  const [size, setSize] = useState<Array<number>>([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+  return size;
+}
 
 const Home = () => {
   const [unityContainerHeight, setInityContainerHeight] = useState(0);
@@ -10,13 +23,17 @@ const Home = () => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const unityContainerRef = useRef<any>(null);
   const headerRef = useRef<any>(null);
+
+  const [windowWidth, windowHeight] = useWindowSize();
+
+  // set width and height of game firstly and on display resize
   useEffect(() => {
     if (unityContainerRef.current && headerRef.current) {
       setInityContainerHeight(unityContainerRef.current.clientHeight);
       setInityContainerWidth(unityContainerRef.current.clientWidth);
       setHeaderHeight(headerRef.current.clientHeight);
     }
-  }, [unityContainerRef]);
+  });
 
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: '/Build/Builds.loader.js',

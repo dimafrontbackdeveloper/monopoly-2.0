@@ -7,8 +7,7 @@ const Main = () => {
     <section className="main">
       <div className="main__row d-g">
         <Navbar />
-        {/* <Home /> */}
-        <Lobby />
+        <Home />
       </div>
     </section>
   );

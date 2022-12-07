@@ -7,6 +7,7 @@ import {
   SetStateAction,
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -113,3 +114,16 @@ export const useCookie = (name: any, initialValue: any) => {
 
   // const [value,updateCookie,deleteCookie] = useCookie('token','')
 };
+
+export function useWindowSize() {
+  const [size, setSize] = useState<Array<number>>([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+  return size;
+}

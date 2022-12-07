@@ -2,7 +2,7 @@ import React, { FC, useEffect, useRef } from 'react';
 import logo from './../assets/images/logo.png';
 
 interface IHeader {
-  headerRef: any;
+  headerRef?: any;
 }
 
 const Header: FC<IHeader> = ({ headerRef }) => {

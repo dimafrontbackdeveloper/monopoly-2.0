@@ -3,24 +3,12 @@ import Header from '../components/Header';
 import GameBackground from './../assets/images/Game-Background.png';
 import { Unity, useUnityContext } from 'react-unity-webgl';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-
-function useWindowSize() {
-  const [size, setSize] = useState<Array<number>>([0, 0]);
-  useLayoutEffect(() => {
-    function updateSize() {
-      setSize([window.innerWidth, window.innerHeight]);
-    }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
-  return size;
-}
+import { useWindowSize } from '../hooks/hooks';
 
 const Home = () => {
-  const [unityContainerHeight, setInityContainerHeight] = useState(0);
-  const [unityContainerWidth, setInityContainerWidth] = useState(0);
-  const [headerHeight, setHeaderHeight] = useState(0);
+  const [unityContainerHeight, setInityContainerHeight] = useState<number>(0);
+  const [unityContainerWidth, setInityContainerWidth] = useState<number>(0);
+  const [headerHeight, setHeaderHeight] = useState<number>(0);
   const unityContainerRef = useRef<any>(null);
   const headerRef = useRef<any>(null);
 
@@ -46,7 +34,7 @@ const Home = () => {
     productVersion: '1.0',
   });
 
-  const loadingPercentage = Math.round(loadingProgression * 100);
+  const loadingPercentage: number = Math.round(loadingProgression * 100);
 
   return (
     <section className="home">

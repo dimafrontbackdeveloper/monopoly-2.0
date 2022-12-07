@@ -61,34 +61,6 @@
          }
       }
 
-      p{
-         
-         font-size: 32px;
-
-         @include breakpoint(425px){
-            font-size: 18px;
-         }
-
-         &::before{
-            content:'';
-            display:block;
-            width: 15px;
-            height: 15px;
-            border-radius: 15px;
-            background: #3BED4C;
-            margin-right: 15px;
-
-            @include breakpoint(425px){
-               margin-right: 5px;
-               width: 10px;
-               height: 10px;
-            }
-         }
-
-         b{
-            font-weight: bold;
-         }
-      }
    }
 
    // .registration__contentImg
@@ -341,10 +313,10 @@
                background: url('./../images/ETH-DepositButton-.png');
                background-repeat: no-repeat;
                background-size: 100% 100%;
-         @include adaptiv-value('padding-top',15,10,0);
-         @include adaptiv-value('padding-right',30,10,0);
-         @include adaptiv-value('padding-bottom',15,10,0);
-         @include adaptiv-value('padding-left',80,60,0);
+               @include adaptiv-value('padding-top',15,10,0);
+               @include adaptiv-value('padding-right',30,10,0);
+               @include adaptiv-value('padding-bottom',15,10,0);
+               @include adaptiv-value('padding-left',80,60,0);
                   color:#000;
                   font-weight: bold;
           @include adaptiv-value('font-size',22,14,0);
@@ -355,7 +327,7 @@
                &:hover{
                background: url('./../images/ETH-DepositButton-Hovered.png');
                background-repeat: no-repeat;
-               background-size: cover;
+               background-size: 100% 100%;
                }
             }
 
@@ -538,4 +510,176 @@
         }
       }
 }
+
+.lobby {
+
+   // .lobby__container
+
+   &__container{
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0px 20px;
+   }
+
+   // .lobby__top
+
+   &__top {
+      margin-bottom: 80px;
+   }
+
+   // .lobby__top-left
+
+   &__top-left {
+      color:#4774FF;
+      font-size: 64px;
+      margin-right: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+   }
+
+   // .lobby__top-right
+
+   &__top-right {
+      h3{
+         margin-right: 50px;
+      }
+      
+      button{
+         width: 350px;
+         height: 60px;
+         border: none;
+         background: url('./../images/CreateYourRoom-Normal.png');
+         background-size: 100% 100%;
+         background-repeat: no-repeat;
+         transition: 0.2s;
+         cursor: pointer;
+
+         &:hover{
+            background: url('./../images/CreateYourRoom-Hovered.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+         }
+      }
+   }
+
+   // .lobby__board
+
+   &__board {
+   }
+
+   // .lobby__board-row
+
+   &__board-row {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      column-gap: 10px;
+      align-items: center;
+      font-size: 24px;
+      color:#F5F5F5;
+      padding-left: 40px;
+      padding-right: 40px;
+      background: #292728;
+      margin-bottom: 10px;
+      
+      &:first-child{
+         background: #3E70FF;
+         color:#000;
+         padding-top: 20px;
+         padding-bottom: 20px;
+         border-radius: 10px 10px 0px 0px;
+         text-transform: uppercase;
+
+         .lobby__board-column{
+            &:first-child{
+               padding-left: 40px;
+            }
+
+            &:last-child{
+               padding-right: 20px;
+            }
+         }
+      }
+      
+      &:last-child{
+        margin-bottom: 0px;
+      }
+
+      b{
+         font-weight: 700;
+      }
+   }
+
+   // .lobby__board-column
+
+   &__board-column {
+      text-align: center;
+
+      &:first-child{
+         text-align: start;
+
+         img {
+            width: 70px;
+            border-radius: 100px;
+            border: 5px solid #fff;
+            margin-right: 20px;
+         }
+      }
+
+      &:last-child{
+         text-align: end;
+
+     
+      }
+   }
+
+   
+
+   // .lobby__board-button
+
+   &__board-button {
+         width: 140px;
+         height: 50px;
+         border: none;
+         transition: 0.2s;
+         background-repeat: no-repeat !important;
+         background-size: 100% 100% !important;
+         cursor: pointer;
+
+         &--play{
+            background: url('./../images/GreenPlay-Normal.png');
+
+            &:hover{
+               background: url('./../images/GreenPlay-Hovered.png');
+            }
+         }
+
+         &--private{
+            background: url('./../images/Private-Normal.png');
+
+            &:hover{
+               background: url('./../images/Private-Hovered.png');
+            }
+         }
+   }
+
+   // .lobby__board-button--play
+
+   &__board-button--play {
+   }
+
+   // .lobby__board-button--private
+
+   &__board-button--private {
+   }
+}
+.container {
+}
+.d-f {
+}
+.jc-sb {
+}
+.ai-c {
+}
+.d-g {
+}
+
 

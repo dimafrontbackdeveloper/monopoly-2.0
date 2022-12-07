@@ -15,7 +15,7 @@ const Register = () => {
             <img src={logo} alt="logo" />
           </div>
           <button className="button" />
-          <p className="d-f ai-c">
+          <p className="d-f ai-c online">
             Users Online:<b>X,XXX</b>
           </p>
         </div>

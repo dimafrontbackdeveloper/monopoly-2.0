@@ -33,7 +33,7 @@ const Home = () => {
       setInityContainerWidth(unityContainerRef.current.clientWidth);
       setHeaderHeight(headerRef.current.clientHeight);
     }
-  });
+  }, [windowWidth, windowHeight]);
 
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: '/Build/Builds.loader.js',
@@ -62,15 +62,18 @@ const Home = () => {
               height: `${window.innerHeight - headerHeight}px`,
               position: 'absolute',
               left: '0',
-              bottom: '0',
+              top: '0',
             }}
           />
-          <div id="unity-loading-bar">
-            <div id="unity-logo"></div>
-            <div id="unity-progress-bar-empty">
-              <div id="unity-progress-bar-full"></div>
+          {isLoaded === false && (
+            <div id="unity-loading-bar">
+              <div id="unity-logo"></div>
+              <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full" style={{ width: `${loadingPercentage}%` }}></div>
+              </div>
             </div>
-          </div>
+          )}
+
           <div id="unity-warning"> </div>
           <div id="unity-footer">
             <div id="unity-webgl-logo"></div>

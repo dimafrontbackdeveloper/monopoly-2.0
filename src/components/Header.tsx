@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import logo from './../assets/images/logo.png';
 
 interface IHeader {
@@ -39,10 +40,10 @@ const Header: FC<IHeader> = ({ headerRef }) => {
             </a>
           </p>
           <p>
-            <a className="d-f ai-c" href="#">
+            <Link className="d-f ai-c" to="/profile">
               <span>Username</span>
               <span></span>
-            </a>
+            </Link>
           </p>
           <p>
             <div className="burger">

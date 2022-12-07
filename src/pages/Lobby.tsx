@@ -60,7 +60,7 @@ const Lobby = () => {
                     src="https://forkast.news/wp-content/uploads/2022/03/NFT-Avatar.png"
                     alt="avatar"
                   />
-                  <b>Nicknamecsacsa</b>
+                  <b>Nickname</b>
                 </div>
                 <div className="lobby__board-column">
                   <b>250</b>

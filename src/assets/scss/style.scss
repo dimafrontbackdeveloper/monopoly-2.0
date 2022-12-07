@@ -246,6 +246,7 @@
 
    @include breakpoint(1440px){
       border-bottom: 1px solid #4D5260;
+   @include adaptiv-value('margin-bottom',60,20,0);
    }
 
 
@@ -524,29 +525,38 @@
    // .lobby__top
 
    &__top {
-      margin-bottom: 80px;
+      @include adaptiv-value('margin-bottom',80,20,0);
+
+      @include breakpoint(1024px){
+         flex-direction: column;
+      }
    }
 
    // .lobby__top-left
 
    &__top-left {
       color:#4774FF;
-      font-size: 64px;
+      @include adaptiv-value('font-size',64,36,0);
       margin-right: 20px;
       font-weight: 700;
       text-transform: uppercase;
+
+      @include breakpoint(1024px){
+         @include adaptiv-value('margin-bottom',40,20,0);
+
+      }
    }
 
    // .lobby__top-right
 
    &__top-right {
       h3{
-         margin-right: 50px;
+      @include adaptiv-value('margin-right',50,25,0);
       }
       
       button{
-         width: 350px;
-         height: 60px;
+      @include adaptiv-value('width',350,175,0);
+      @include adaptiv-value('height',60,30,0);
          border: none;
          background: url('./../images/CreateYourRoom-Normal.png');
          background-size: 100% 100%;
@@ -558,6 +568,10 @@
             background: url('./../images/CreateYourRoom-Hovered.png');
             background-size: 100% 100%;
             background-repeat: no-repeat;
+         }
+
+         @include breakpoint(1024px){
+            display: none;
          }
       }
    }
@@ -571,30 +585,35 @@
 
    &__board-row {
       grid-template-columns: 2fr 1fr 1fr 1fr;
-      column-gap: 10px;
+      @include adaptiv-value('column-gap',10,5,0);
       align-items: center;
-      font-size: 24px;
+      @include adaptiv-value('font-size',24,12,0);
       color:#F5F5F5;
-      padding-left: 40px;
-      padding-right: 40px;
+      @include adaptiv-value('padding-left',40,5,0);
+      @include adaptiv-value('padding-right',40,5,0);
       background: #292728;
-      margin-bottom: 10px;
-      
+      @include adaptiv-value('margin-bottom',10,5,0);
+ 
+
       &:first-child{
          background: #3E70FF;
          color:#000;
-         padding-top: 20px;
-         padding-bottom: 20px;
+      @include adaptiv-value('padding-top',20,10,0);
+      @include adaptiv-value('padding-bottom',20,10,0);
          border-radius: 10px 10px 0px 0px;
          text-transform: uppercase;
 
          .lobby__board-column{
             &:first-child{
-               padding-left: 40px;
+      @include adaptiv-value('padding-left',40,20,0);
+
+      @include breakpoint(1024px){
+         padding-left: 10px;
+      }
             }
 
             &:last-child{
-               padding-right: 20px;
+               padding-right: 10px;
             }
          }
       }
@@ -617,10 +636,35 @@
          text-align: start;
 
          img {
-            width: 70px;
+      @include adaptiv-value('width',70,35,0);
             border-radius: 100px;
             border: 5px solid #fff;
-            margin-right: 20px;
+      @include adaptiv-value('margin-right',20,5,0);
+
+            @include breakpoint(1440px){
+            border: 4px solid #fff;
+            }
+
+            @include breakpoint(1024px){
+            border: 3px solid #fff;
+            }
+
+            @include breakpoint(768px){
+            border: 2px solid #fff;
+            }
+
+            @include breakpoint(425px){
+            border: 1px solid #fff;
+            }
+         }
+
+         b{
+            display: inline-block;
+            max-width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
          }
       }
 
@@ -636,8 +680,8 @@
    // .lobby__board-button
 
    &__board-button {
-         width: 140px;
-         height: 50px;
+      @include adaptiv-value('width',140,50,0);
+      @include adaptiv-value('height',50,20,0);
          border: none;
          transition: 0.2s;
          background-repeat: no-repeat !important;

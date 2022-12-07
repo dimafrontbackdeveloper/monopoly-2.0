@@ -1,28 +1,45 @@
-import { useEffect } from 'react';
-import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
+import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 import Lobby from './pages/Lobby';
-import Main from './pages/Main';
 import Register from './pages/Register';
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Main />,
-    },
-    {
-      path: '/lobby',
-      element: <Lobby />,
-    },
-    {
-      path: '/registration',
-      element: <Register />,
-    },
-  ]);
+  // const router = createBrowserRouter([
+  //   {
+  //     path: '/',
+  //     element: <Home />,
+  //   },
+  //   {
+  //     path: '/lobby',
+  //     element: <Lobby />,
+  //   },
+  //   {
+  //     path: '/registration',
+  //     element: <Register />,
+  //   },
+  // ]);
   return (
     <>
-      <RouterProvider router={router} />
+      {/* <Route path="/registration" element={<Register />} />
+      <section className="main">
+        <div className="main__row d-g">
+          <Navbar />
+          <Route path="/home" element={<Home />} />
+          <Route path="/lobby" element={<Lobby />} /> 
+        </div>
+      </section> */}
+
+      <Routes>
+        <Route path="/">
+          <Route path="/registration" element={<Register />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/lobby" element={<Lobby />} />
+          {/* <Route path="/home" element={<Home />} /> */}
+          {/* <Route path="/lobby" element={<Lobby />} /> */}
+        </Route>
+      </Routes>
     </>
   );
 }

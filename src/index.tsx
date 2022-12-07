@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { setupStore } from './store/store';
 import { Provider } from 'react-redux';
 import Header from './components/Header';
+import { BrowserRouter, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -13,12 +14,14 @@ const store = setupStore();
 
 root.render(
   <Provider store={store}>
-    <div className="wrapper">
-      <div className="content">
-        <App />
+    <BrowserRouter>
+      <div className="wrapper">
+        <div className="content">
+          <App />
+        </div>
+        {/* footer */}
       </div>
-      {/* footer */}
-    </div>
+    </BrowserRouter>
   </Provider>,
 );
 

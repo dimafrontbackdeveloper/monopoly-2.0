@@ -17,7 +17,9 @@ const Header: FC<IHeader> = ({ headerRef }) => {
             </a>
           </p>
           <p>
-            <a href="#">Leaderboard</a>
+            <Link className="d-f ai-c" to="/leaderboard">
+              Leaderboard
+            </Link>
           </p>
           <p className="logo">
             <a href="#">

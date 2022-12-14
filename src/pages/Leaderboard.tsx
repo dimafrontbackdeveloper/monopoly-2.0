@@ -16,17 +16,17 @@ const Leaderboard = () => {
             <h2>Leaderboard</h2>
             <div className="leaderboard__board-wrapper">
               <div className="leaderboard__ranking d-f ai-c jc-sb">
-                <div className="leaderboard__ranking-first-place">
+                <div className="leaderboard__ranking-place leaderboard__ranking-second-place">
                   <img src={crownFirstPlace} alt="crown" />
                   <img src={maskProfilePick} alt="mask profile pick" />
                   <img src={baseCircle} alt="base circle" />
                 </div>
-                <div className="leaderboard__ranking-first-place">
+                <div className="leaderboard__ranking-place leaderboard__ranking-first-place">
                   <img src={crownFirstPlace} alt="crown" />
                   <img src={maskProfilePick} alt="mask profile pick" />
                   <img src={baseCircle} alt="base circle" />
                 </div>
-                <div className="leaderboard__ranking-first-place">
+                <div className="leaderboard__ranking-place leaderboard__ranking-third-place">
                   <img src={crownFirstPlace} alt="crown" />
                   <img src={maskProfilePick} alt="mask profile pick" />
                   <img src={baseCircle} alt="base circle" />
